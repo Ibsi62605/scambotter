@@ -7,7 +7,7 @@ import json
 chars = string.ascii_letters + string.digits + '!@#$%^&*()'
 random.seed = (os.urandom(1024))
 
-url= 'https://apple-secure.agusganteng.mail.sgn.ialonguen.org/session/truelogin.php'
+url= 'https://apple-secure.agusganteng.mail.sgn.ialonguen.org/session/truelogin.php' #imput url 
 names = json.loads(open('names.json').read())
 
 for name in names:
@@ -17,8 +17,8 @@ for name in names:
 	password = ''.join(random.choice(chars) for i in range(8))
 
 	requests.post(url, allow_redirects=False, data={
-		'xuser': username,
-		'xpass': password
+		'xuser': username,  # <= differs for website
+		'xpass': password   # <=
 
 	})
 
